@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  /* ---- Design tokens ---- */
+  :root{--bg:#FFFFFF;--fg:#1E1E1E;--bd:#E5E7EB;--pri:#1E40AF;--pri-fg:#FFFFFF;--mut:#6B7280;--soft:#F3F5FA;
+        box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1218;--fg:#ECEEF2;--bd:#262B36;--pri:#6F93F5;--pri-fg:#0F1218;--mut:#9AA3B2;--soft:#171B24}}
+  :root[data-theme="dark"]{--bg:#0F1218;--fg:#ECEEF2;--bd:#262B36;--pri:#6F93F5;--pri-fg:#0F1218;--mut:#9AA3B2;--soft:#171B24}
+  html{scroll-padding-top:env(safe-area-inset-top,0px)}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6}
+  .bd{border:1px solid var(--bd)} .bdb{border-bottom:1px solid var(--bd)}
+  .mut{color:var(--mut)} .soft{background:var(--soft)}
+  .btn{background:var(--pri);color:var(--pri-fg);font-weight:600;border-radius:8px;padding:.55rem 1rem;min-height:44px;transition:opacity .15s}
+  .btn:hover{opacity:.9}
+  .ghost{border:1px solid var(--bd);border-radius:8px;min-height:44px;padding:.4rem .9rem;font-weight:500;transition:border-color .15s}
+  .ghost:hover{border-color:var(--pri)}
+  .chip{border:1px solid var(--bd);border-radius:999px;padding:.35rem .9rem;font-size:.85rem;font-weight:500;white-space:nowrap;min-height:36px}
+  .chip[aria-pressed=true]{background:var(--pri);color:var(--pri-fg);border-color:var(--pri)}
+  .navl{padding:.5rem .8rem;border-radius:8px;font-weight:500;font-size:.92rem;border-bottom:2px solid transparent}
+  .navl[aria-current=page]{color:var(--pri);border-bottom-color:var(--pri);font-weight:700}
+  :focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+  .scroll-x{overflow-x:auto;scrollbar-width:none}.scroll-x::-webkit-scrollbar{display:none}
+  .notes h1{font-size:1.35rem;font-weight:800;margin:.2rem 0 .6rem}.notes h2{font-size:1.05rem;font-weight:700;margin:1.1rem 0 .4rem}
+  .notes p{margin:.5rem 0;max-width:68ch}.notes ul{list-style:disc;padding-left:1.2rem;margin:.5rem 0}
+  .notes code{background:var(--soft);border:1px solid var(--bd);border-radius:4px;padding:0 .3rem;font-size:.85em}
+  .notes pre{background:var(--soft);border:1px solid var(--bd);border-radius:8px;padding:.8rem;overflow-x:auto;font-size:.82rem}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
